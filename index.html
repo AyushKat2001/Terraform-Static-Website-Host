@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexFit Gym</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            color: #fff;
+            position: relative;
+            min-height: 100vh;
+        }
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: rgba(18, 18, 18, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideDown 1s ease forwards;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        header h1 {
+            font-size: 2rem;
+            color: #f45c43;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: -3px;
+            left: 0;
+            background-color: #f45c43;
+            transition: width 0.4s ease;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 90vh;
+            position: relative;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0.6);
+        }
+        .hero-content {
+            position: relative;
+            color: #fff;
+            animation: fadeInUp 1.5s ease forwards;
+            opacity: 0;
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .hero-content a {
+            text-decoration: none;
+            padding: 12px 30px;
+            background: #f45c43;
+            color: #fff;
+            border-radius: 30px;
+            transition: background 0.3s ease;
+        }
+        .hero-content a:hover {
+            background: #ff6a5e;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 60px 10%;
+            background: rgba(24, 24, 24, 0.9);
+        }
+        .feature {
+            background: rgba(32, 32, 32, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transform: translateY(30px);
+            opacity: 0;
+            animation: fadeInFeature 1s ease forwards;
+        }
+        .feature:nth-child(2) { animation-delay: 0.3s; }
+        .feature:nth-child(3) { animation-delay: 0.6s; }
+        @keyframes fadeInFeature {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .feature h3 {
+            color: #f45c43;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Image -->
+    <img src="https://myterraformprojectstaticwebsiteaws-2025.s3.ap-south-1.amazonaws.com/pic.jpg" alt="Gym Background" class="background-image">
+
+    <header>
+        <h1>FlexFit</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Programs</a>
+            <a href="#">Trainers</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Unleash Your Potential</h2>
+            <p>Join FlexFit Gym and start your transformation today!</p>
+            <a href="#">Get Started</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <h3>State-of-the-Art Equipment</h3>
+            <p>Push your limits with the latest machines and free weights in a motivating environment.</p>
+        </div>
+        <div class="feature">
+            <h3>Expert Trainers</h3>
+            <p>Our certified trainers will guide and push you toward your fitness goals.</p>
+        </div>
+        <div class="feature">
+            <h3>Flexible Memberships</h3>
+            <p>Choose the plan that fits your lifestyle, from month-to-month to annual memberships.</p>
+        </div>
+    </section>
+
+</body>
+</html>
